@@ -1,0 +1,630 @@
+<?xml version='1.0'?>
+<document>
+	<!--
+        FORMATTING NOTES, PLEASE TAKE NOTE
+        dialogue tag first, alternate between sprite and speech (for dialogue). end with trigger (if applicable).
+        trigger order: <trigger> tag. name (in proper captalization), dialogue tag, true/false to enable next dialogue instantly.) no spaces between commas.
+        branching dialogue: put Branch in trigger tag, followed by int to indicate which choice to refer to on the list. 
+        multiple option order: <button> tag. first three same as triggers, then button text and button image.
+        transition: use the <shift> tag, and put in location. true/false after that to determine if the dialogue should auto start after moving. sfx number next to show if transition sound should play.
+        changing XML file: <next> tag, put in xml file number from the list in editor. things in <trigger> should correspond to the XML file that is going to be switched.
+        BGM: <BGM> tag at the first line, number to indicate tracks (1 - 5). 0 to indicate fade out effect.
+        SFX: <SFX> tag, then line number followed by track on SFX list (eg. 1,5). If multiple occurences, seperate by slashes. (eg. 1,5/2.7).
+        Decision Flags: <choice> tag, then string. (for ref: [0] is demo choice between read/write/nap)
+        Special commands: <command> tag, line number, followed by string to indicate the special command that will happen (should be same as the function name that triggers).
+  -->
+  
+  <dialogue1>
+    <BGM>1</BGM>
+    <SFX>1,1</SFX>
+		<sprite>null</sprite>
+		<speech>Pop, <i>pop</i>, sizzle.</speech>
+    <sprite></sprite>
+		<speech>The smell of bacon wafts over to where you are, and your stomach grumbles. You sigh and roll to your side before slowly opening your eyes, looking blearily at the clock.</speech>
+    <sprite></sprite>
+    <speech>The numbers <b>10:32</b> blink back at you from the display. The date is out of whack, but that's what happens when you buy something that’s half off from the thrift store.</speech>
+    <sprite></sprite>
+    <speech>Damn thing couldn’t even withstand one drop from the bedside table without something inside breaking.</speech>
+    <sprite></sprite>
+    <speech>Maybe you could fix it later. It is a day off, after all.</speech>
+    <sprite></sprite>
+    <speech>You shut your eyes and think about drifting back to sleep, but before you can do so you hear a loud shout outside your room.</speech>
+    <trigger>Unknown,dialogue2,true</trigger>
+	</dialogue1>
+	
+	<dialogue2>
+		<sprite>null</sprite>
+		<speech>“Ah—don’t!!”</speech>
+    <trigger>Narrator,dialogue3,true</trigger>
+	</dialogue2>
+	
+	<dialogue3>
+		<sprite>null</sprite>
+		<speech>The tone suggests that whatever the voice is shouting about is probably something concerning enough to warrant your attention. You should probably get up to see what the situation is.</speech>
+    <sprite></sprite>
+		<speech>You push yourself out of bed with a sigh and plant your feet onto the floor, feeling the plush carpeting underneath.</speech>
+    <sprite></sprite>
+		<speech>You will probably never admit it out loud, but you do appreciate Connor’s nagging for you to change the flooring of the bedroom. The floor has never been more welcoming since making the change.</speech>
+    <trigger>Unknown,dialogue4,true</trigger>
+	</dialogue3>
+
+  <dialogue4>
+    <SFX>1,8</SFX>
+    <sprite>null</sprite>
+    <speech>“Sumo, this isn’t for you!”</speech>
+    <trigger>Narrator,dialogue5,true</trigger>
+  </dialogue4>
+
+  <dialogue5>
+    <BGM>0</BGM>
+    <sprite>null</sprite>
+    <speech>...you should probably go to the kitchen before anything does actually happen.</speech>
+    <trigger>Narrator,dialogue6,false</trigger>
+    <shift>kitchen,true,0</shift>
+  </dialogue5>
+
+  <dialogue6>
+    <BGM>2</BGM>
+    <sprite>null</sprite>
+    <speech>The kitchen, unsurprisingly, is a huge mess.</speech>
+    <sprite></sprite>
+    <speech>One would think that an android would be able to prevent such a thing, but even Cyberlife’s top prototype is helpless when pitted against Sumo’s giant bulk and pleading look.</speech>
+    <trigger>Connor,dialogue7,true</trigger>
+  </dialogue6>
+
+  <dialogue7>
+    <sprite>worry</sprite>
+    <speech>*sighs*</speech>
+    <trigger>Hank,dialogue8,true</trigger>
+  </dialogue7>
+
+  <dialogue8>
+    <sprite></sprite>
+    <speech>"Well, at least they’re cooled enough to not burn him."</speech>
+    <trigger>Narrator,dialogue9,true</trigger>
+  </dialogue8>
+
+  <dialogue9>
+    <sprite></sprite>
+    <speech>You watch as Sumo finishes chowing down the strip of bacon that he’s stolen from Connor.</speech>
+    <trigger>Connor,dialogue10,true</trigger>
+  </dialogue9>
+
+  <dialogue10>
+    <sprite>coinworry</sprite>
+    <speech>"Dogs shouldn’t be eating bacon in the first place."</speech>
+    <trigger>Hank,dialogue11,true</trigger>
+  </dialogue10>
+
+  <dialogue11>
+    <sprite></sprite>
+    <speech>"Having some once in a while won’t hurt him."</speech>
+    <trigger>Connor,dialogue12,true</trigger>
+  </dialogue11>
+
+  <dialogue12>
+    <sprite>annoy</sprite>
+    <speech>"‘Some’ doesn’t mean ‘one whole strip’. There’s too much salt."</speech>
+    <sprite></sprite>
+    <speech>"A dog’s digestive system isn’t equipped to deal with it. He’s going to have an upset stomach later."</speech>
+    <trigger>Hank,dialogue13,true</trigger>
+  </dialogue12>
+
+  <dialogue13>
+    <sprite></sprite>
+    <speech>"Sumo’s a big boy, he’ll deal with it."</speech>
+    <trigger>Narrator,dialogue14,true</trigger>
+  </dialogue13>
+
+  <dialogue14>
+    <sprite></sprite>
+    <speech>You reach out and give Connor a pat on the shoulder.</speech>
+    <sprite>worry</sprite>
+    <speech>Connor sighs in response, but you can feel his shoulders sagging ever so slightly underneath your hand.</speech>
+    <trigger>Connor,dialogue15,true</trigger>
+  </dialogue14>
+
+  <dialogue15>
+    <sprite>normal</sprite>
+    <speech>"Don’t blame me later when he throws up all over the floor."</speech>
+    <trigger>Hank,dialogue16,true</trigger>
+  </dialogue15>
+  
+  <dialogue16>
+    <sprite></sprite>
+    <speech>"Won’t be the first time that’s happened."</speech>
+    <trigger>Connor,dialogue17,true</trigger>
+  </dialogue16>
+  
+  <dialogue17>
+    <sprite>worry</sprite>
+    <speech>"Hank..."</speech>
+    <trigger>Narrator,dialogue18,true</trigger>
+  </dialogue17>
+
+  <dialogue18>
+    <sprite></sprite>
+    <speech>You can’t help but chuckle. It never fails to be amusing at how it's the small things that seem to ruffle up Connor’s feathers the most.</speech>
+    <trigger>Hank,dialogue19,true</trigger>
+  </dialogue18>
+
+  <dialogue19>
+    <sprite></sprite>
+    <sppech>"As long as he doesn’t run around too much he’ll be fine. Besides, we’ll be in here the whole day to keep an eye on ‘im."</sppech>
+    <sprite></sprite>
+    <speech>"Let’s just focus on having a nice day off, yeah? Not everyday when the both of us can have the time off together."</speech>
+    <trigger>Narrator,dialogue20,true</trigger>
+  </dialogue19>
+
+  <dialogue20>
+    <sprite>null</sprite>
+    <speech>It’s been long enough that you can’t quite remember when had been the last time the both of you had the day off like this.</speech>
+    <sprite></sprite>
+    <speech>Life after the revolution has been busy, but for once you had welcomed the work.</speech>
+    <sprite></sprite>
+    <speech>Helping out the androids is something you have a personal investment in now, after all.</speech>
+    <trigger>Connor,dialogue21,true</trigger>
+  </dialogue20>
+
+  <dialogue21>
+    <sprite>worry</sprite>
+    <speech>"...I suppose you’re right."</speech>
+    <trigger>Narrator,dialogue22,true</trigger>
+  </dialogue21>
+
+  <dialogue22>
+    <sprite>normal</sprite>
+    <speech>Connor sighs again, but his expression lightens up. It’s still a process for Connor to learn about loosening up, but he’s been making progress.</speech>
+    <sprite></sprite>
+    <speech>It’s just a matter of time before he gets the hang of it.</speech>
+    <sprite></sprite>
+    <speech>Having eaten his stolen food, Sumo waddles over to where you are and starts nosing at your feet.</speech>
+    <sprite></sprite>
+    <speech>You snort and nudge his head away with the foot he’s sniffing at.</speech>
+    <trigger>Hank,dialogue23,true</trigger>
+  </dialogue22>
+
+  <dialogue23>
+    <sprite></sprite>
+    <speech>"You need any help with cleaning up? I can do that before heading off to wash up."</speech>
+    <trigger>Connor,dialogue24,true</trigger>
+  </dialogue23>
+
+  <dialogue24>
+    <sprite></sprite>
+    <speech>"No, it’s alright. I should clean up my own messes."</speech>
+    <sprite>fond</sprite>
+    <speech>"...and Sumo will help too, since he’s partly the reason why this kitchen is so messy."</speech>
+    <trigger>Narrator,dialogue25,true</trigger>
+  </dialogue24>
+
+  <dialogue25>
+    <SFX>1,9</SFX>
+    <sprite></sprite>
+    <speech>Sumo lets out a whine to show his disagreement. Connor pointedly ignores it.</speech>
+    <trigger>Connor,dialogue26,true</trigger>
+  </dialogue25>
+
+  <dialogue26>
+    <sprite>normal</sprite>
+    <speech>"Go ahead and wash up, Hank. Breakfast will be ready when you’re done."</speech>
+    <trigger>Narrator,dialogue27,true</trigger>
+  </dialogue26>
+
+  <dialogue27>
+    <sprite>happy</sprite>
+    <speech>Connor gives you a smile with those words. You smile back. </speech>
+    <trigger>Hank,dialogue28,true</trigger>
+  </dialogue27>
+
+  <dialogue28>
+    <sprite></sprite>
+    <speech>"Well, if you insist."</speech>
+    <trigger>Narrator,dialogue29,true</trigger>
+  </dialogue28>
+
+  <dialogue29>
+    <sprite></sprite>
+    <speech>You pat Connor’s shoulder one more time before pulling away.</speech>
+    <trigger>Hank,dialogue30,true</trigger>
+  </dialogue29>
+
+  <dialogue30>
+    <sprite></sprite>
+    <speech>"Knock on the door if I’m not out in fifteen."</speech>
+    <trigger>Connor,dialogue31,true</trigger>
+  </dialogue30>
+
+  <dialogue31>
+    <sprite>fond</sprite>
+    <speech>"I’ll give you twenty."</speech>
+    <trigger>Hank,dialogue32,true</trigger>
+  </dialogue31>
+
+  <dialogue32>
+    <sprite></sprite>
+    <speech>"I won’t take <i>that</i> long."</speech>
+    <trigger>Connor,dialogue33,true</trigger>
+  </dialogue32>
+
+  <dialogue33>
+    <sprite></sprite>
+    <speech>"I wasn’t making any assumptions."</speech>
+    <trigger>Narrator,dialogue34,true</trigger>
+  </dialogue33>
+
+  <dialogue34>
+    <sprite></sprite>
+    <speech>It takes a moment for the implications to sink in.</speech>
+    <sprite>happy</sprite>
+    <speech>You scowl, and Connor gives a cheeky smile.</speech>
+    <trigger>Hank,dialogue35,true</trigger>
+  </dialogue34>
+
+  <dialogue35>
+    <sprite></sprite>
+    <speech>"Maybe I should go back to work. Just so I don’t have to put up with your sass."</speech>
+    <trigger>Connor,dialogue36,true</trigger>
+  </dialogue35>
+
+  <dialogue36>
+    <sprite>fond</sprite>
+    <speech>"Who was the one who just said to enjoy this day off?"</speech>
+    <trigger>Hank,dialogue37,true</trigger>
+  </dialogue36>
+
+  <dialogue37>
+    <sprite></sprite>
+    <speech>"Yeah, well, that’s not going to happen when I have to put up with your bullshit."</speech>
+    <trigger>Narrator,dialogue38,true</trigger>
+  </dialogue37>
+
+  <dialogue38>
+    <sprite>happy</sprite>
+    <speech>Connor laughs in response to those words.</speech>
+    <sprite></sprite>
+    <speech>You feel like you should be more annoyed about this, but seeing Connor’s face light up like this brings up a warmth in your chest that you don’t want to lose so quickly.</speech>
+    <sprite></sprite>
+    <speech>It feels like it's been a while since you’ve been able to see something like that.</speech>
+    <trigger>Hank,dialogue39,true</trigger>
+  </dialogue38>
+
+  <dialogue39>
+    <sprite></sprite>
+    <speech>"Yeah, go and laugh it out, you manic. I still expect breakfast when I’m out."</speech>
+    <trigger>Narrator,dialogue40,true</trigger>
+  </dialogue39>
+
+  <dialogue40>
+    <sprite>fond</sprite>
+    <speech>Connor’s response is to chuckle once again.</speech>
+    <sprite></sprite>
+    <speech>You shake your head and let out a huff, leaving him for now to take that much needed washing up in the bathroom.</speech>
+    <trigger>Narrator,dialogue41,false</trigger>
+    <shift>bathroom,true,0</shift>
+  </dialogue40>
+
+  <dialogue41>
+    <sprite>null</sprite>
+    <speech>The bathroom, unlike the kitchen, is rather cleaned up.</speech>
+    <sprite></sprite>
+    <speech>Despite multiple attempts to make Connor stop, the android continues to insist maintaining this particular room ‘to keep up the highest hygiene standard possible’.</speech>
+    <sprite></sprite>
+    <speech>His words, not yours.</speech>
+    <sprite></sprite>
+    <speech>At least you’ve managed to make him tone it down to do it every other day instead of every <i>single</i> day.</speech>
+    <sprite></sprite>
+    <speech>You walk up to the sink.</speech>
+    <sprite></sprite>
+    <speech>The usual arrangement of post it notes are slapped around the curved edge of the bathroom mirror, their edges curled up from the moisture.</speech>
+    <sprite></sprite>
+    <speech>Well, save for one note. Which means it's a new one Connor must have put up earlier, before making breakfast.</speech>
+    <sprite></sprite>
+    <speech>You reach out to pick up the note to see what Connor’s written.</speech>
+    <trigger>Narrator,dialogue42,false</trigger>
+    <shift>postit,true,3</shift>
+  </dialogue41>
+
+  <dialogue42>
+    <sprite></sprite>
+    <speech>You smile at the message. It’s cheesy as hell, but it's hard to not appreciate the gesture. Connor really does try his best.</speech>
+    <sprite></sprite>
+    <speech>You stick the note back onto the mirror and go about your daily morning routine of cleaning up.</speech>
+    <trigger>Narrator,dialogue43,false</trigger>
+    <shift>bathroom,true,3</shift>
+  </dialogue42>
+
+  <dialogue43>
+    <SFX>1,4</SFX>
+    <sprite></sprite>
+    <speech>The water from the shower is warm. You can feel the muscles in your body relax under the spray and you let out a pleased sigh.</speech>
+    <sprite></sprite>
+    <speech>Last night had been…</speech>
+    <sprite></sprite>
+    <speech>...well, it had been <i>good</i>, that’s for sure.</speech>
+    <sprite></sprite>
+    <speech>Hopefully you’ll be able to replicate that with Connor sometime later in the day.</speech>
+    <sprite></sprite>
+    <speech>The temptation to fully enjoy the warm shower lingers at the back of your mind, but you decide that it’d be more worth it to wait until later to fully savor that enjoyment.</speech>
+    <sprite></sprite>
+    <speech>Possibly with Connor.</speech>
+    <sprite></sprite>
+    <speech>You make a mental note about it and quickly finish up your shower, not wanting to keep Connor waiting for too long. You hurriedly wipe yourself down and put your clothes back on. </speech>
+    <sprite></sprite>
+    <speech>No need to dress up in anything fancy since you’re gonna spend the whole day at home. It’s definitely something that you’re looking forward to.</speech>
+    <sprite></sprite>
+    <speech>You quickly finish up with the rest of your routine and head out of the bathroom after dumping your worn underwear into the laundry basket. </speech>
+    <trigger>Narrator,dialogue44,false</trigger>
+    <shift>living,true,0</shift>
+  </dialogue43>
+
+  <dialogue44>
+    <sprite></sprite>
+    <speech>The moment you’re back in the hallway the crisp scent of cooked bacon wafts onto your nose, and your stomach growls loudly at the prospect of food.</speech>
+    <trigger>Connor,dialogue45,true</trigger>
+  </dialogue44>
+
+  <dialogue45>
+    <sprite></sprite>
+    <speech>"Breakfast’s ready!"</speech>
+    <trigger>Narrator,dialogue46,true</trigger>
+  </dialogue45>
+
+  <dialogue46>
+    <SFX>1,5</SFX>
+    <sprite></sprite>
+    <speech>...maybe even a little <i>too</i> loudly.</speech>
+    <sprite></sprite>
+    <speech>You briefly send a glare down towards your stomach as you make your way to the kitchen.</speech>
+    <trigger>Connor,dialogue47,false</trigger>
+    <shift>kitchen,true,0</shift>
+  </dialogue46>
+
+  <dialogue47>
+    <sprite>fond</sprite>
+    <speech>"Good morning again, Hank."</speech>
+    <trigger>Hank,dialogue48,true</trigger>
+  </dialogue47>
+
+  <dialogue48>
+    <sprite></sprite>
+    <speech>"Yeah, yeah."</speech>
+    <trigger>Narrator,dialogue49,true</trigger>
+  </dialogue48>
+
+  <dialogue49>
+    <sprite>null</sprite>
+    <speech>You settle down onto your usual dining chair with a sigh.</speech>
+    <sprite></sprite>
+    <speech> Connor puts down a plate laden with your favourite breakfast foods onto the table.</speech>
+    <sprite></sprite>
+    <speech>Just the smell alone is enough to make your mouth water.</speech>
+    <trigger>Hank,dialogue50,true</trigger>
+  </dialogue49>
+
+  <dialogue50>
+    <sprite></sprite>
+    <speech>"What’s with the special treatment today?"</speech>
+    <trigger>Connor,dialogue51,true</trigger>
+  </dialogue50>
+
+  <dialogue51>
+    <sprite>fond</sprite>
+    <speech>"A little ‘thank you’ for last night."</speech>
+    <trigger>Narrator,dialogue52,true</trigger>
+  </dialogue51>
+
+  <dialogue52>
+    <sprite>happy</sprite>
+    <speech>Connor winks at the end of those words, a sly grin on his face.</speech>
+    <trigger>Hank,dialogue53,true</trigger>
+  </dialogue52>
+
+  <dialogue53>
+    <sprite></sprite>
+    <speech>"Jesus, it's not like it's your first time or anything."</speech>
+    <trigger>Narrator,dialogue54,true</trigger>
+  </dialogue53>
+
+  <dialogue54>
+    <SFX>5,6</SFX>
+    <sprite>null</sprite>
+    <speech>Your response does nothing to lessen the faint heat that’s crept up onto your face. It’s not like you’re <i>embarrassed</i> when the day’s barely started.</speech>
+    <sprite></sprite>
+    <speech>One would think that somebody like Connor would at least have the decency to let you finish your breakfast first before talking about these things...</speech>
+    <sprite></sprite>
+    <speech>...but as you’ve come to know, Connor is extremely… eager when it comes to such matters.</speech>
+    <sprite></sprite>
+    <speech>Then again, it's not as if you’ve done much to discourage him from those behaviours.</speech>
+    <sprite></sprite>
+    <speech>You stifle down another sigh and pick up the cutlery.</speech>
+    <sprite></sprite>
+    <speech>Connor settles down at a seat next to you as you start to go through the meal that he’s cooked.</speech>
+    <trigger>Connor,dialogue55,true</trigger>
+  </dialogue54>
+
+  <dialogue55>
+    <sprite>normal</sprite>
+    <speech>"It’s been a while since you’ve let me make anything. Hopefully the standard’s still there."</speech>
+    <trigger>Narrator,dialogue56,true</trigger>
+  </dialogue55>
+
+  <dialogue56>
+    <sprite></sprite>
+    <speech>You’d have responded immediately if it wasn’t for the fact that your mouth is currently full of (delicious) bacon.</speech>
+    <sprite>worry</sprite>
+    <speech>Honestly, Connor has absolutely nothing to worry about.</speech>
+    <sprite></sprite>
+    <speech>If anything, the food is even better than the last time you remember.</speech>
+    <sprite></sprite>
+    <speech>You tell him as much as soon as you manage to swallow down the food in your mouth.</speech>
+    <trigger>Hank,dialogue57,true</trigger>
+  </dialogue56>
+
+  <dialogue57>
+    <sprite></sprite>
+    <speech>"It’s great, Connor. Pretty sure it tastes even better than before."</speech>
+    <trigger>Connor,dialogue58,true</trigger>
+  </dialogue57>
+
+  <dialogue58>
+    <sprite>fond</sprite>
+    <speech>"You flatter me, Lieutenant."</speech>
+    <trigger>Hank,dialogue59,true</trigger>
+  </dialogue58>
+
+  <dialogue59>
+    <sprite>normal</sprite>
+    <speech>"Quit it with that ‘Lieutenant’ shit when we’re off the clock."</speech>
+    <trigger>Narrator,dialogue60,true</trigger>
+  </dialogue59>
+
+  <dialogue60>
+    <sprite>happy</sprite>
+    <speech>You roll your eyes as you say that even as Connor sends another cheeky grin at you.</speech>
+    <sprite>null</sprite>
+    <speech>It’s an old argument at this point, but the point still stands.</speech>
+    <sprite></sprite>
+    <speech>Putting a line between your personal relationship with the professional one you had with Connor is and will always be one of the biggest hurdles you have…</speech>
+    <sprite></sprite>
+    <speech>...but all things considered, it's been going decently enough.</speech>
+    <sprite></sprite>
+    <speech>Despite the joke, Connor <i>does</i> respect the boundaries you’ve established when it matters, so you’re always willing to let these things slide.</speech>
+    <sprite></sprite>
+    <speech>Still, you make a note to remind Connor about this if he does toe that line just a little too close for comfort.</speech>
+    <sprite></sprite>
+    <speech>You turn back to your meal and continue eating your breakfast.</speech>
+    <sprite></sprite>
+    <speech>Connor continues to watch you while you eat, but it's been long enough by now that you hardly feel bothered by the staring at all.</speech>
+    <sprite></sprite>
+    <speech>In a way, it's touching just to see how concerned Connor is about your well-being. Maybe you should stop procrastinating about not exercising.</speech>
+    <trigger>Connor,dialogue61,true</trigger>
+  </dialogue60>
+
+  <dialogue61>
+    <sprite>normal</sprite>
+    <speech>"I know this is supposed to be a day in, but would it be alright if I head out for a while?"</speech>
+    <sprite></sprite>
+    <speech>"I have a few errands to do that I’ve regrettably been putting off due to work."</speech>
+    <trigger>Narrator,dialogue62,true</trigger>
+  </dialogue61>
+
+  <dialogue62>
+    <sprite>null</sprite>
+    <speech>You try not to make a face when you hear those words from Connor.</speech>
+    <sprite></sprite>
+    <speech>It’d be a lie to say that you’re entirely unbothered, but the last thing you want to do is to cause any more difficulties in Connor’s life.</speech>
+    <sprite></sprite>
+    <speech>Plus, it’s not like he’s going to be gone for the whole day.</speech>
+    <sprite></sprite>
+    <speech>You swallow down your food and proceed to reply.</speech>
+    <trigger>Hank,dialogue63,true</trigger>
+  </dialogue62>
+
+  <dialogue63>
+    <sprite></sprite>
+    <speech>"Yeah, sure. Do what you gotta do, Connor."</speech>
+    <trigger>Connor,dialogue64,true</trigger>
+  </dialogue63>
+
+  <dialogue64>
+    <sprite>fond</sprite>
+    <speech>"Thank you."</speech>
+    <trigger>Hank,dialogue65,true</trigger>
+  </dialogue64>
+
+  <dialogue65>
+    <sprite></sprite>
+    <speech>"Nothing to thank me for."</speech>
+    <trigger>Connor,dialogue66,true</trigger>
+  </dialogue65>
+
+  <dialogue66>
+    <sprite>normal</sprite>
+    <speech>"Still, I feel that I should show my appreciation."</speech>
+    <trigger>Narrator,dialogue67,true</trigger>
+  </dialogue66>
+
+  <dialogue67>
+    <SFX>4,2</SFX>
+    <sprite>happy</sprite>
+    <speech>Connor’s smile almost makes him glow.</speech>
+    <sprite>null</sprite>
+    <speech>You give him a brief look before looking back down at your plate and try to ignore the warmth running up to your cheeks again.</speech>
+    <sprite></sprite>
+    <speech>Damn androids and their ways of getting under your skin.</speech>
+    <sprite></sprite>
+    <speech>You finish up the rest of your breakfast quickly enough, shooing Connor away before he can get to the dishes so that the android can get ready for those errands of his.</speech>
+    <trigger>Narrator,dialogue68,false</trigger>
+    <shift>living,true,0</shift>
+  </dialogue67>
+
+  <dialogue68>
+    <sprite></sprite>
+    <speech>By the time you’re done with the dishes Connor is standing at the threshold between the kitchen and the living room.</speech>
+    <sprite></sprite>
+    <speech>It’s not hard to figure out that he’s been waiting for you.</speech>
+    <sprite></sprite>
+    <speech>You send a scowl at his direction as you walk over to where he stands.</speech>
+    <trigger>Hank,dialogue69,true</trigger>
+  </dialogue68>
+
+  <dialogue69>
+    <sprite></sprite>
+    <speech>"You don’t need to wait up for me."</speech>
+    <sprite></sprite>
+    <speech>"It’s not like I’m leaving with you."</speech>
+    <trigger>Connor,dialogue70,true</trigger>
+  </dialogue69>
+
+  <dialogue70>
+    <sprite>normal</sprite>
+    <speech>"It wouldn’t be nice to simply leave without giving you a proper goodbye."</speech>
+    <trigger>Hank,dialogue71,true</trigger>
+  </dialogue70>
+
+  <dialogue71>
+    <sprite></sprite>
+    <speech>"Don’t be so dramatic."</speech>
+    <trigger>Narrator,dialogue72,true</trigger>
+  </dialogue71>
+
+  <dialogue72>
+    <sprite>fond</sprite>
+    <speech>You roll your eyes as you say that. Connor chuckles in response.</speech>
+    <sprite></sprite>
+    <speech>You roll your eyes even harder in return.</speech>
+    <sprite>happy</sprite>
+    <speech>Connor gives another smile, and then leans in to plant a kiss on your cheek.</speech>
+    <trigger>Connor,dialogue73,true</trigger>
+  </dialogue72>
+
+  <dialogue73>
+    <sprite>fond</sprite>
+    <speech>"Don’t get too lonely without me."</speech>
+    <trigger>Hank,dialogue74,true</trigger>
+  </dialogue73>
+
+  <dialogue74>
+    <sprite></sprite>
+    <speech>"I’ll be fine, jesus."</speech>
+    <trigger>Narrator,dialogue75,true</trigger>
+  </dialogue74>
+
+  <dialogue75>
+    <BGM>0</BGM>
+    <SFX>3,7</SFX>
+    <sprite>null</sprite>
+    <speech>Cheeks flaming, you shoo him out of the house.</speech>
+    <sprite></sprite>
+    <speech>You’re tempted to close the door after he’s out to make a point, but you can’t help yourself from staying just a little longer to keep watch until he vanishes around the corner.</speech>
+    <sprite></sprite>
+    <speech>It’s only when Connor is completely out of sight then do you step back and close the door.</speech>
+    <sprite></sprite>
+    <speech>You turn around and face the rest of your house as you contemplate on what to do to occupy yourself while Connor is out.</speech>
+    <sprite></sprite>
+    <speech>What should you do…?</speech>
+    <trigger>Explore,dialogue1,false</trigger>
+    <next>1</next>
+  </dialogue75>
+</document>

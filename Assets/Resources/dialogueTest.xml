@@ -1,0 +1,101 @@
+<?xml version='1.0'?>
+<document>
+	<!--
+        dialogue tag first, alternate between sprite and speech (for dialogue). end with trigger (if applicable).
+        trigger order: name (in proper captalization), dialogue tag, true/false to enable next dialogue instantly.) no spaces between commas.
+        multiple option order: first three same as triggers, then button text and button image.
+  -->
+  
+  <dialogue1>
+		<sprite>normal</sprite>
+		<speech>Hello! I'm Nyandroid!</speech>
+    <sprite></sprite>
+		<speech>...</speech>
+    <sprite></sprite>
+    <speech>Who might you be?</speech>
+    <trigger>Nyandroid,dialogue2,false</trigger>
+	</dialogue1>
+	
+	<dialogue2>
+		<sprite>normal</sprite>
+		<speech>Okay, so... who's your favourite character from Persona 5?</speech>
+    <sprite>happy</sprite>
+		<speech>Mine is Hifumi!</speech>
+    <sprite></sprite>
+		<speech>...</speech>
+    <sprite>normal</sprite>
+		<speech>Yusuke is second.</speech>
+    <trigger>Tom,dialogue3,true</trigger>
+	</dialogue2>
+	
+	<dialogue3>
+		<sprite>happy</sprite>
+		<speech>My likes include pizza and milk!</speech>
+    <sprite>normal</sprite>
+		<speech>I also like having underwear dances when I wake up.</speech>
+    <sprite></sprite>
+		<speech>Gotta get my body ready for the day!</speech>
+    <sprite></sprite>
+		<speech>Man,</speech>
+    <sprite>happy</sprite>
+		<speech>life is great.</speech>
+    <trigger>Nyandroid,dialogue4,false</trigger>
+	</dialogue3>
+
+  <dialogue4>
+    <sprite>normal</sprite>
+    <speech>So...</speech>
+    <sprite></sprite>
+    <speech>....</speech>
+    <sprite></sprite>
+    <speech>Do you like pineapple on pizza?</speech>
+    <button>Tom,dialogue5,false,No,normal</button>
+    <button>Nyandroid,dialogue6,false,Yes,normal</button>
+  </dialogue4>
+
+  <dialogue5>
+    <sprite>normal</sprite>
+    <speech>What?</speech>
+    <sprite></sprite>
+    <speech>But pineapple on pizza is SO GOOOOOOOD.</speech>
+    <trigger>Nyandroid,dialogue7,true</trigger>
+  </dialogue5>
+
+  <dialogue6>
+    <sprite>happy</sprite>
+    <speech>Yes!</speech>
+    <sprite></sprite>
+    <speech>Hawaiian pizza is the BEST!!</speech>
+    <trigger>Tom,dialogue8,true</trigger>
+  </dialogue6>
+
+  <dialogue7>
+    <sprite>normal</sprite>
+    <speech>It totally is!!</speech>
+    <trigger>Tom,dialogue9,true</trigger>
+  </dialogue7>
+
+  <dialogue8>
+    <sprite>happy</sprite>
+    <speech>You got it, Nyanny!</speech>
+    <trigger>Tom,dialogue9,true</trigger>
+  </dialogue8>
+
+  <dialogue9>
+    <sprite>normal</sprite>
+    <speech>So...</speech>
+    <sprite></sprite>
+    <speech>Have you subscribed to the Nyancave?</speech>
+    <button>Tom,dialogue5,false,What's a Nyancave?,normal</button>
+    <button>Nyandroid,dialogue6,false,You bet!,normal</button>
+    <button>Tom,dialogue10,true,Nope and never,normal</button>
+  </dialogue9>
+
+  <dialogue10>
+    <sprite>normal</sprite>
+    <speech>...</speech>
+    <sprite></sprite>
+    <speech>Okay then.</speech>
+    <trigger>Nyandroid,dialogue1,false</trigger>
+  </dialogue10>
+</document>

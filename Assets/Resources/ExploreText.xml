@@ -1,0 +1,453 @@
+<?xml version='1.0'?>
+<document>
+	<!--
+        FORMATTING NOTES, PLEASE TAKE NOTE
+        dialogue tag first, alternate between sprite and speech (for dialogue). end with trigger (if applicable).
+        trigger order: <trigger> tag. name (in proper captalization), dialogue tag, true/false to enable next dialogue instantly.) no spaces between commas.
+        branching dialogue: put Branch in trigger tag, followed by int to indicate which choice to refer to on the list. 
+        multiple option order: <button> tag. first three same as triggers, then button text and button image.
+        transition: use the <shift> tag, and put in location. true/false after that to determine if the dialogue should auto start after moving. sfx number next to show if transition sound should play.
+        changing XML file: <next> tag, put in xml file number from the list in editor. things in <trigger> should correspond to the XML file that is going to be switched.
+        BGM: <BGM> tag at the first line, number to indicate tracks (1 - 5). 0 to indicate fade out effect.
+        SFX: <SFX> tag, then line number followed by track on SFX list (eg. 1,5). If multiple occurences, seperate by slashes. (eg. 1,5/2.7).
+        Decision Flags: <choice> tag, then string. (for ref: [0] is demo choice between read/write/nap)
+        Special commands: <command> tag, line number, followed by string to indicate the special command that will happen (should be same as the function name that triggers).
+  -->
+  
+  <recordplayer>
+    <sprite>null</sprite>
+    <speech>Your vinyl player. One of your pride and joys.</speech>
+    <sprite></sprite>
+    <speech>The discs are getting harder to find again these days, but you’re content with the collection that you have.</speech>
+    <sprite></sprite>
+    <speech>Now that he’s had more time to explore his interests, Connor has apparently settled on liking jazz. He bought back a vinyl he purchased on his own just the other day.</speech>
+    <sprite></sprite>
+    <speech>Obviously, that very night he put it in to play. You can still remember the soothing tones that filled the room as the both of you slowly danced to the music.</speech>
+    <sprite></sprite>
+    <speech>Maybe you and Connor can do it again tonight, if he’s up for it.</speech>
+    <trigger>Explore, ,false</trigger>
+	</recordplayer>
+
+  <bookshelf>
+    <sprite>null</sprite>
+    <speech>Books and various odds and ends line the shelves across your vision.</speech>
+    <sprite></sprite>
+    <speech>You used to have a bigger bookshelf than this, but traded it off for something more compact a few years back.</speech>
+    <sprite></sprite>
+    <speech>Now, though, as you look at the slowly growing amount of random things that Connor has been bringing back from god knows where, maybe you should start looking into getting a larger shelf again.</speech>
+    <sprite></sprite>
+    <speech>...Connor would also most likely appreciate not having to battle against you for a spot to place his growing collection of mini succulents.</speech>
+    <trigger>Explore, ,false</trigger>
+  </bookshelf>
+
+  <sumolook>
+    <SFX>1,13</SFX>
+    <sprite>null</sprite>
+    <speech>Your loyal companion, Sumo. Connor loves spoiling him half to death.</speech>'
+    <sprite></sprite>
+    <speech>The other day he got this box of really fancy treats from some high end pet store. Sumo went literally bonkers over them because he liked it <i>that</i> much.</speech>
+    <sprite></sprite>
+    <speech>Maybe Connor’s going to that store again to get more of those treats…?</speech>
+    <sprite></sprite>
+    <speech>...</speech>
+    <sprite></sprite>
+    <speech>You should probably talk to Connor about moderation of treats, but he should know that stuff in that supercomputer brain of his, right?</speech>
+    <sprite></sprite>
+    <speech>...</speech>
+    <sprite></sprite>
+    <speech>It won’t hurt to mention it at least.</speech>
+    <trigger>Explore, ,false</trigger>
+  </sumolook>
+
+  <television>
+    <sprite>null</sprite>
+    <speech>If there’s one thing that has Connor’s interest, it’d be the TV.</speech>
+    <sprite></sprite>
+    <speech>...or more specifically, incredibly cheesy telenovelas from the nineties.</speech>
+    <sprite></sprite>
+    <speech>You tried to watch one with him once, but the hamminess of everything was just way too much for you to sit through.</speech>
+    <sprite></sprite>
+    <speech>Since then, you’ve mostly left him to your own devices when he decides to go on a binge on those shows.</speech>
+    <sprite></sprite>
+    <speech>Probably the best thing to do, especially when he does the same to you when you watch the games.</speech>
+    <trigger>Explore, ,false</trigger>
+  </television>
+
+  <door>
+    <sprite>null</sprite>
+    <speech>You wonder exactly what Connor's errands are. Despite his casual tone earlier, it has to be pretty important for him to take leave on a day off like this.</speech>
+    <sprite></sprite>
+    <speech>Maybe you should have asked to come along with him.</speech>
+    <sprite></sprite>
+    <speech>At least then he'd have some kind of company, even if it isn't exactly something either of you had planned.</speech>
+    <sprite></sprite>
+    <speech>...</speech>
+    <sprite></sprite>
+    <speech>There's always next time.</speech>
+    <sprite></sprite>
+    <speech>...</speech>
+    <sprite></sprite>
+    <speech>This house defnitely feels very different without him around now.</speech>
+    <trigger>Explore, ,false</trigger>
+  </door>
+  
+  <couch>
+    <sprite>null</sprite>
+    <speech>The couch. One of the first piece of furniture you got for this place when you moved into this place.</speech>
+    <sprite></sprite>
+    <speech>You still remember the day you found it at a thrift store. It was on sale, too.</speech>
+    <sprite></sprite>
+    <speech>Admittedly it needed a bit of cleaning up before it could be usable, but it’s always been a welcome sight since.</speech>
+    <sprite></sprite>
+    <speech>...and if anything, it's even more welcome now these days since you started to spend many a night with Connor on it, from watching TV to...</speech>
+    <sprite></sprite>
+    <speech>...</speech>
+    <sprite></sprite>
+    <speech>...well.</speech>
+    <sprite></sprite>
+    <speech>...</speech>
+    <sprite></sprite>
+    <speech>You wonder if Connor is up for some TV time when he comes back from his errand.</speech>
+    <sprite></sprite>
+    <speech>You make a note to ask him when he returns.</speech>
+    <trigger>Explore, ,false</trigger>
+  </couch>
+
+  <couchdone>
+    <sprite>null</sprite>
+    <speech>You’ve occupied yourself for a fair bit by wandering around the house, but it seems like Connor isn’t back home yet.</speech>
+    <sprite></sprite>
+    <speech>Guess the errand he has to do is gonna take a while.</speech>
+    <sprite></sprite>
+    <speech>You settle down onto the couch with a sigh and look around the room. The TV and bookshelf catch your interest.</speech>
+    <sprite></sprite>
+    <speech>You could use this time to watch some shows or reread some of your favourite books.</speech>
+    <sprite></sprite>
+    <speech>Alternatively, the thought of lying down doesn’t sound too bad either.</speech>
+    <sprite></sprite>
+    <speech>What should you do…?</speech>
+    <button>Narrator,readselect,true,Read,normal</button>
+    <button>Narrator,watchselect,true,Watch TV,normal</button>
+    <button>Narrator,napselect,true,Nap,normal</button>
+  </couchdone>
+
+  <couchnotdone>
+    <sprite>null</sprite>
+    <speech>It’s still probably going to be a while before Connor comes back. You could continue to occupy yourself with wandering around the house, but it's not as if this place is going anywhere.</speech>
+    <sprite></sprite>
+    <speech>Maybe you could pass away the rest of the time by doing something else instead?</speech>
+    <button>Narrator,readselect,true,Read,normal</button>
+    <button>Narrator,watchselect,true,Watch TV,normal</button>
+    <button>Narrator,napselect,true,Nap,normal</button>
+    <button>Narrator,donothing,true,Decide Later,normal</button>
+  </couchnotdone>
+
+  <donothing>
+    <sprite>null</sprite>
+    <speech>You decide that it's not quite time yet to settle down on the couch.</speech>
+    <sprite></sprite>
+    <speech>There's still a whole day ahead, after all. Maybe Connor might be back soon, too.</speech>
+    <sprite></sprite>
+    <speech>Plenty of time later to lounge about.</speech>
+    <trigger>Explore, ,false</trigger>
+  </donothing>
+
+  <kitchentable>
+    <sprite>null</sprite>
+    <speech>You remember a time where the dining table would be covered in nothing but piles of takeout containers.</speech>
+    <sprite></sprite>
+    <speech>These days, though, you tend to eat in more often than not, since Connor’s taken to cooking. It’s a hobby, apparently.</speech>
+    <sprite></sprite>
+    <speech>He’s pretty good at it now, too. Definitely a far cry from the first time he tried it. Grease fires were involved.</speech>
+    <sprite></sprite>
+    <speech>You’re pretty sure that you’re probably the only person who’s witnessed an android fuck up their cooking so bad the entire stove had to be replaced.</speech>
+    <sprite></sprite>
+    <speech>To Connor’s credit, though, he’s improved massively since then.</speech>
+    <sprite></sprite>
+    <speech>...</speech>
+    <sprite></sprite>
+    <speech>Thank god.</speech>
+    <trigger>Explore, ,false</trigger>
+  </kitchentable>
+
+  <dishwasher>
+    <sprite>null</sprite>
+    <speech>Calling this a dishwasher would probably be a lie at this point, just due to how long it’s been since you’ve actually used it's dishwashing capabilities.</speech>
+    <sprite></sprite>
+    <speech>Or to be more accurate, how long it’s been since you <i>could</i> use it's dishwashing capabilities. Can’t exactly get it to wash anything when the important parts are all broken.</speech>
+    <sprite></sprite>
+    <speech>These days, it's mostly a glorified rack to hold all your plates after you’ve washed them at the sink.</speech>
+    <sprite></sprite>
+    <speech>Connor offered to fix it once, but you turned it down, saying that it wasn’t worth it.</speech>
+    <sprite></sprite>
+    <speech>While that’s not wholly a lie, it would be nice to not have to always wash the plates by hand.</speech>
+    <sprite></sprite>
+    <speech>...maybe next time.</speech>
+    <trigger>Explore, ,false</trigger>
+  </dishwasher>
+
+  <dogcabinet>
+    <SFX>5,9</SFX>
+    <sprite>null</sprite>
+    <speech>The aptly nicknamed ‘dog cabinet’, as it contains all of Sumo’s food as well as treats.</speech>
+    <sprite></sprite>
+    <speech>Truth be told it would be nice to place the food on the ground to make it easier to access, but the last time you tried that Sumo got into it and ate two whole week’s worth of food.</speech>
+    <sprite></sprite>
+    <speech>Connor convinced you to shift the food upwards after that so that Sumo wouldn’t be able to reach it.</speech>
+    <sprite></sprite>
+    <speech>As you stand in front of the cabinet, you can feel the weight of Sumo’s soulful gaze on you.</speech>
+    <sprite></sprite>
+    <speech>He whimpers.</speech>
+    <sprite></sprite>
+    <speech>You snort.</speech>
+    <sprite></sprite>
+    <speech>Yeah, Sumo isn’t going to charm you for more food.</speech>
+    <sprite></sprite>
+    <speech>...this time, anyway.</speech>
+    <trigger>Explore, ,false</trigger>
+  </dogcabinet>
+
+  <kitchenwindow>
+    <sprite>null</sprite>
+    <speech>The window that Connor once broke through. It’s been fixed since then, of course.</speech>
+    <sprite></sprite>
+    <speech>It had been pretty funny to see how flustered Connor got when he first laid eyes on said window when he moved in to live with you. Wouldn’t stop apologizing.</speech>
+    <sprite></sprite>
+    <speech>You assured him that it’s fine, of course. Breaking a window is probably the least destructive thing he could have done.</speech>
+    <sprite></sprite>
+    <speech>At the very least, fixing that is far less costly when compared to replacing the bedroom door.</speech>
+    <trigger>Explore, ,false</trigger>
+  </kitchenwindow>
+
+  <bathtub>
+    <sprite>null</sprite>
+    <speech>The bathtub and shower.</speech>
+    <sprite></sprite>
+    <speech>More than once you’ve thought about removing the bathtub component of this whole thing.</speech>
+    <sprite></sprite>
+    <speech>The damn thing is a nuisance when you take your showers, and fact that it gets slippery when wet makes it dangerous if you’re not careful.</speech>
+    <sprite></sprite>
+    <speech>...Christ, that sure sounded like something Connor would have said.</speech>
+    <sprite></sprite>
+    <speech>...</speech>
+    <sprite></sprite>
+    <speech>You decide to keep it for now.</speech>
+    <trigger>Explore, ,false</trigger>
+  </bathtub>
+
+  <sinkmirror>
+    <sprite>null</sprite>
+    <speech>The bathroom really isn’t the best place to put something like post it notes here, if you’re going to be honest.</speech>
+    <sprite></sprite>
+    <speech>The moisture weakens the effectiveness of the sticky side, and you’ve lost many a note to running ink just because you used a cheaper pen of marker.</speech>
+    <sprite></sprite>
+    <speech>Despite that, the habit remains.</speech>
+    <sprite></sprite>
+    <speech>Probably because it's been ingrained at this point.</speech>
+    <sprite></sprite>
+    <speech>The fact that Connor’s joined in as well doesn’t make it any easier to kick.</speech>
+    <sprite></sprite>
+    <speech>You sigh as you look at the collection of notes that line around the mirror.</speech>
+    <sprite></sprite>
+    <speech>Connor’s note from this morning stands out from the stack, it's corners still straight. Right beneath it is the note you’ve written in response.</speech>
+    <sprite></sprite>
+    <speech>You wonder if Connor’s seen it yet.</speech>
+    <sprite></sprite>
+    <speech>Well, even if he hasn’t, he’ll see it eventually.</speech>
+    <trigger>Explore, ,false</trigger>
+  </sinkmirror>
+
+  <laundry>
+    <sprite>null</sprite>
+    <speech>The laundry basket. It’s half full.</speech>
+    <sprite></sprite>
+    <speech>If memory serves you right, it's your turn to do the laundry this time.</speech>
+    <sprite></sprite>
+    <speech>Would it count if you did the laundry now so that you don’t have to deal with it when it gets full again?</speech>
+    <sprite></sprite>
+    <speech>...</speech>
+    <sprite></sprite>
+    <speech>...probably not.</speech>
+    <sprite></sprite>
+    <speech>It’s almost worth it to go through with the idea just to see Connor’s exasperation, but it might also irritate him, and the last thing you want to deal with today is an irritated Connor.</speech>
+    <sprite></sprite>
+    <speech>Maybe next time.</speech>
+    <trigger>Explore, ,false</trigger>
+  </laundry>
+
+  <bed>
+    <sprite>null</sprite>
+    <speech>The ever trustworthy bed. King sized, of course.</speech>
+    <sprite></sprite>
+    <speech>One of the first things Connor did when he moved in was to replace the mattress you had. Said something about it being too hard for your back.</speech>
+    <sprite></sprite>
+    <speech>You argued back, but it's hard to maintain said argument once you got to try out the new mattress for yourself and got to experience just how comfortable it was.</speech>
+    <sprite></sprite>
+    <speech>And despite the softness, it's also surprisingly durable.</speech>
+    <sprite></sprite>
+    <speech>...very durable.</speech>
+    <sprite></sprite>
+    <speech>...</speech>
+    <sprite></sprite>
+    <speech>Hopefully that durability stays for a while.</speech>
+    <trigger>Explore, ,false</trigger>
+  </bed>
+
+  <cupboard>
+    <SFX>1,15</SFX>
+    <sprite>null</sprite>
+    <speech>You open up the doors of your wardrobe and contemplate on the contents inside.</speech>
+    <sprite></sprite>
+    <speech>For the most part it's just your clothes and Connor’s, but there’s also space in there to put other… things that you or Connor break out to use from time to time.</speech>
+    <sprite></sprite>
+    <speech>Connor used one of them the other day. It was pretty great.</speech>
+    <sprite></sprite>
+    <speech>You certainly wouldn’t mind it if he decides to use it again in the near future.</speech>
+    <trigger>Explore, ,false</trigger>
+  </cupboard>
+
+  <bedtable>
+    <SFX>3,14/5,18</SFX>
+    <sprite>null</sprite>
+    <speech>It’s hard to not swear by having a bedside table when it's always so damn useful. You doubt there was ever a time where you didn’t have one by the bed.</speech>
+    <sprite></sprite>
+    <speech>Besides, it's convenient storing space, and there are just somethings that a cupboard is too far to reach for.</speech>
+    <sprite></sprite>
+    <speech>You open it up and peer inside to see if anything needs a refill.</speech>
+    <sprite></sprite>
+    <speech>...</speech>
+    <sprite></sprite>
+    <speech>Still good for another night.</speech>
+    <trigger>Explore, ,false</trigger>
+  </bedtable>
+
+  <bedwindow>
+    <sprite>null</sprite>
+    <speech>The sight of Detroit’s skyline greets you from the bedroom window, it's shape highlighted by the sun.</speech>
+    <sprite></sprite>
+    <speech>Even though you’ve lived here your whole life, you’ve never really taken the time to fully appreciate how it looks.</speech>
+    <sprite></sprite>
+    <speech>A lot has happened in the last few years, but right now you feel like you’ve never felt better.</speech>
+    <sprite></sprite>
+    <speech>...you hope Connor comes back soon. The house doesn’t feel the same now without him around.</speech>
+    <trigger>Explore, ,false</trigger>
+  </bedwindow>
+
+  <magazine>
+    <sprite>null</sprite>
+    <speech>The latest copy of <i>Century</i> that Connor bought back home the other day. A picture of Elijah Kamski adorns the cover page.</speech>
+    <sprite></sprite>
+    <speech>The article featuring him talks about how Kamski reacquired Cyberlife following their dissolution after the Revolution. He then refurbished it and passed it over to Jericho as some sort of android help center or something like that.</speech>
+    <sprite></sprite>
+    <speech>You really couldn’t care less about what that asshole is doing, but you can understand why Connor is interested. Despite everything, Kamski is the originator of all the androids currently in existence.</speech>
+    <sprite></sprite>
+    <speech>Still good to keep some tabs on him, just in case he tries to get up to anything funny.</speech>
+    <sprite></sprite>
+    <speech>Last thing you want is for Connor to take another one of his stupid ‘tests’.</speech>
+    <trigger>Explore, ,false</trigger>
+  </magazine>
+
+  <explorecomplete>
+    <sprite>null</sprite>
+    <speech>You’ve occupied yourself for a fair bit by wandering around the house, but it seems like Connor isn’t back home yet.</speech>
+    <sprite></sprite>
+    <speech>Guess the errand he has to do is gonna take a while.</speech>
+    <sprite></sprite>
+    <speech>You decide to head back over to the living room to wait for him there.</speech>
+    <trigger>Narrator,explorecompleteshift,false</trigger>
+    <shift>living,true,0</shift>
+  </explorecomplete>
+
+  <explorecompleteshift>
+    <sprite>null</sprite>
+    <speech>You settle down onto the couch with a sigh and look around the room. The TV and bookshelf catch your interest.</speech>
+    <sprite></sprite>
+    <speech>You could use this time to watch some shows or reread some of your favourite books.</speech>
+    <sprite></sprite>
+    <speech>Alternatively, the thought of lying down doesn’t sound too bad either.</speech>
+    <sprite></sprite>
+    <speech>What should you do…?</speech>
+    <button>Narrator,readselect,true,Read,normal</button>
+    <button>Narrator,watchselect,true,Watch TV,normal</button>
+    <button>Narrator,napselect,true,Nap,normal</button>
+  </explorecompleteshift>
+
+  <readselect>
+    <SFX>4,10</SFX>
+    <choice>dialogueread</choice>
+    <sprite>null</sprite>
+    <speech>You decide to spend the time reading.</speech>
+    <sprite></sprite>
+    <speech>You get up from your couch and head over to the bookshelf, where your small but meaningful collection of books are placed.</speech>
+    <sprite></sprite>
+    <speech>You thumb through the titles and find one of your slowly growing favourites - an anthology of stories written by Asimov.</speech>
+    <sprite></sprite>
+    <speech>Book in hand, you settle yourself comfortably back onto the couch and start to read.</speech>
+    <sprite></sprite>
+    <speech>At least this’ll keep you occupied enough until Connor comes back.</speech>
+    <trigger>Narrator,exploreclose,true</trigger>
+  </readselect>
+
+  <watchselect>
+    <SFX>2,11</SFX>
+    <choice>dialoguewatch</choice>
+    <sprite>null</sprite>
+    <speech>You decide to spend the time watching TV.</speech>
+    <sprite></sprite>
+    <speech>You reach for the remote and turn on the television. The screen flickers to life, showing what seems to be a replay of a movie from the early 2000s.</speech>
+    <sprite></sprite>
+    <speech>People in iconic long, billowing black coats strut about the screen, jumping around the place and performing stunts once considered a new evolution to cinematography.</speech>
+    <sprite></sprite>
+    <speech>You remember a time when you were pretty into these movies as a whole. It was pretty wild.</speech>
+    <sprite></sprite>
+    <speech>As the characters on screen run through their familiar lines, you sigh and settle yourself more comfortably onto the couch.</speech>
+    <sprite></sprite>
+    <speech>At least you’ll be occupied enough until Connor comes back.</speech>
+    <trigger>Narrator,exploreclose,true</trigger>
+  </watchselect>
+
+  <napselect>
+    <SFX>4,12</SFX>
+    <choice>dialoguenap</choice>
+    <sprite>null</sprite>
+    <speech>You decide that a nap is in order.</speech>
+    <sprite></sprite>
+    <speech>Sure, it hasn’t been that long since you woke up, but sleeping in is what day offs are for, right?</speech>
+    <sprite></sprite>
+    <speech>Especially when there’s nobody around to spend the time with.</speech>
+    <sprite></sprite>
+    <speech>You sigh and shift yourself to lie down on the couch. It groans with your weight as you settle yourself in.</speech>
+    <sprite></sprite>
+    <speech>You close your eyes and let the sunlight through the window warm you up. It is a pretty nice day outside.</speech>
+    <sprite></sprite>
+    <speech>Maybe you could make plans to go out with Connor the next time the both of you have an off day again.</speech>
+    <sprite></sprite>
+    <speech>Might even make it a surprise.</speech>
+    <sprite></sprite>
+    <speech>Gotta give Connor all the good stuff you can deliver while you’re still alive.</speech>
+    <trigger>Narrator,exploreclose,true</trigger>
+  </napselect>
+
+  <exploreclose>
+    <BGM>0</BGM>
+    <sprite>null</sprite>
+    <speech>You relax further into the couch as the minutes pass by, taking the time to simply soak in and enjoy the moment.</speech>
+    <sprite></sprite>
+    <speech>After how busy life had been in the last few weeks, it's good to finally be able to take a much needed break.</speech>
+    <sprite></sprite>
+    <speech>If only Connor would come back from his errands to enjoy this with you…</speech>
+    <sprite></sprite>
+    <speech>...</speech>
+    <trigger>Narrator,nightshift,true</trigger>
+  </exploreclose>
+
+  <nightshift>
+    <sprite>null</sprite>
+    <speech>...</speech>
+    <sprite></sprite>
+    <speech>...</speech>
+    <trigger>Narrator,dialogue1,false</trigger>
+    <shift>blackout,true</shift>
+    <next>2</next>
+  </nightshift>
+</document>
