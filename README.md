@@ -1,14 +1,13 @@
-# UIStuff
-UI stuff that became a working dialogue system for self.
+# Halcyon Days
+A DBH VN fangame, Hankcon centric.
 
-Current mechanics
-- Standard dialogue display
-- reading dialogue off an .xml file
-- switching between characters
-- go to another dialogue tag (moving to new dialogue)
-- enable insta start of new dialogue
-- sprite switching for emotes etc.
-- multiple choice response/answer
-- animations for dialogue start/end
-- Toggling of BGM/SFX
-- Fading in/out of background to show scene change
+Milestones
+- Released final demo build to public (covering Act 1)
+
+Future Plans
+- Write script for Act 2
+- Work on mechanics needed for Act 2
+- Further polish on Act 1, added interactive elements (tablet reading).
+- Update background art
+- Script for Act 3
+- More TBA
