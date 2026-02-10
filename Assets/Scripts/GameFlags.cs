@@ -18,6 +18,7 @@ public class GameFlags : MonoBehaviour
     [HideInInspector] public List<string> choiceFlags;
     [SerializeField] private AudioSource audioPlayer, SFXPlayer;
     [SerializeField] private GameObject eventSystem, moveTipDisplay;
+    [SerializeField] private Transform LivingRoomButtons, BedroomButtons, KitchenButtons, BathroomButtons;
     public List<AudioClip> BGMList, SFXList;
 
     private void Awake()
@@ -70,22 +71,22 @@ public class GameFlags : MonoBehaviour
         kitchenStuff = new List<GameObject>();
         bathroomStuff = new List<GameObject>();
 
-        foreach (Transform t in GameObject.Find("Living Room Buttons").transform)
+        foreach (Transform t in LivingRoomButtons.transform)
         {
             livingRoomStuff.Add(t.gameObject);
         }
 
-        foreach (Transform t in GameObject.Find("Bedroom Buttons").transform)
+        foreach (Transform t in BedroomButtons.transform)
         {
             bedroomStuff.Add(t.gameObject);
         }
 
-        foreach (Transform t in GameObject.Find("Kitchen Buttons").transform)
+        foreach (Transform t in KitchenButtons.transform)
         {
             kitchenStuff.Add(t.gameObject);
         }
 
-        foreach (Transform t in GameObject.Find("Bathroom Buttons").transform)
+        foreach (Transform t in BathroomButtons.transform)
         {
             bathroomStuff.Add(t.gameObject);
         }
