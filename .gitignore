@@ -8,6 +8,7 @@
 /Assets/StreamingAsset*
 /Assets/Vuforia*
 /Assets/Editor/Vuforia*
+/HankconVN_WIN/
 
 # Visual Studio 2015 cache directory
 /.vs/
